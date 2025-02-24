@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/compiled/css/app.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/compiled/css/app-dark.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/compiled/css/iconly.css">
-
 </head>
 
 <body>
@@ -73,109 +72,170 @@
                                 <div class="col-6 col-lg-3 col-md-6">
                                     <div class="card">
                                         <div class="card-body px-4 py-4-5">
-                                            <div class="row">
-                                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                                                    <div class="stats-icon purple mb-2">
-                                                        <i class="iconly-boldShow"></i>
+                                            <a href="<?= base_url('Home') ?>">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                                        <div class="stats-icon purple mb-2">
+                                                            <div>
+                                                                <i class="bi bi-person-fill-add"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                        <h6 class="text-muted font-semibold">Perlu Validasi</h6>
+                                                        <h6 class="font-extrabold mb-0"> <?php echo $jumlahBaru ?></h6>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                                    <h6 class="text-muted font-semibold">Pendaftar</h6>
-                                                    <h6 class="font-extrabold mb-0">0</h6>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-lg-3 col-md-6">
+                                    <div class="card">
+                                        <div class="card-body px-4 py-4-5">
+                                            <a href="<?= base_url('Home/diterima') ?>">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                                        <div class="stats-icon green mb-2">
+                                                            <div>
+                                                                <i class="bi bi-person-fill-check"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                        <h6 class="text-muted font-semibold">Diterima</h6>
+                                                        <h6 class="font-extrabold mb-0"> <?= $jumlahTerima ?></h6>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-6 col-lg-3 col-md-6">
                                     <div class="card">
                                         <div class="card-body px-4 py-4-5">
-                                            <div class="row">
-                                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                                                    <div class="stats-icon blue mb-2">
-                                                        <i class="iconly-boldProfile"></i>
+                                            <a href="<?= base_url('Home/ditolak') ?>">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                                        <div class="stats-icon red mb-2">
+                                                            <div>
+                                                                <i class="bi bi-person-fill-x"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                        <h6 class="text-muted font-semibold">Ditolak</h6>
+                                                        <h6 class="font-extrabold mb-0"> <?= $jumlahTolak ?> </h6>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                                    <h6 class="text-muted font-semibold">Laki-Laki</h6>
-                                                    <h6 class="font-extrabold mb-0">0</h6>
-                                                </div>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-6 col-lg-3 col-md-6">
                                     <div class="card">
                                         <div class="card-body px-4 py-4-5">
-                                            <div class="row">
-                                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
-                                                    <div class="stats-icon red mb-2">
-                                                        <i class="iconly-boldProfile"></i>
+                                            <a href="<?= base_url('Home/all') ?>">
+                                                <div class="row">
+                                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                                        <div class="stats-icon red mb-2">
+                                                            <div>
+                                                                <i class="bi bi-person-fill-x"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                                        <h6 class="text-muted font-semibold">Total Pendaftar</h6>
+                                                        <h6 class="font-extrabold mb-0"> <?php echo $jumlahPendaftar ?></h6>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                                    <h6 class="text-muted font-semibold">Perempuan</h6>
-                                                    <h6 class="font-extrabold mb-0">0</h6>
-                                                </div>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </section>
 
-                        <section class="section">
-                            <div class="card" style="transform: scale(0.78); transform-origin: top left; width: 130%;">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h5 class="card-title">
-                                            Data Pendaftar SD Islam Tompokersan Lumajang
-                                        </h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped" id="table1">
-                                                <thead>
+
+                    <?php
+                    $segmen = $this->uri->segment(2); // Ambil segmen ke-2 dari URL
+
+                    // Tentukan variabel yang akan digunakan berdasarkan segmen
+                    if ($segmen == 'diterima') {
+                        $dataSiswa = $siswaTerima;
+                        $judul = "Yang Diterima ✅";
+                        $eksport = "diterima";
+                    } elseif ($segmen == 'ditolak') {
+                        $dataSiswa = $siswaTolak;
+                        $judul = "Yang Ditolak 🚫";
+                        $eksport = "ditolak";
+                    } elseif ($segmen == 'all') {
+                        $dataSiswa = $siswa;
+                        $judul = "Keseluruhan 🚀";
+                        $eksport = "all";
+                    } else { // Jika segmen kosong atau tidak sesuai, gunakan siswaBaru
+                        $dataSiswa = $siswaBaru;
+                        $judul = "Yang Perlu Divalidasi 📑";
+                        $eksport = "";
+                    }
+                    $no = 1;
+                    ?>
+
+                    <section class="section">
+                        <div class="card" style="transform: scale(0.78); transform-origin: top left; width: 130%;">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title">
+                                        Data Pendaftar <?= $judul ?>
+                                    </h5>
+                                    <a href="<?= base_url('Home/exportExcel/' . $eksport . '') ?>" class="btn btn-success">Export Data</a>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped" id="table1">
+                                            <thead>
+                                                <tr>
+                                                    <th>No.</th>
+                                                    <th>Nama Akun</th>
+                                                    <th>Tanggal Upload</th>
+                                                    <th>Detail Data</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <?php foreach ($dataSiswa as $siswa) : ?>
                                                     <tr>
-                                                        <th>No.</th>
-                                                        <th>Nama Akun</th>
-                                                        <th>Tanggal Upload</th>
-                                                        <th>Detail Data</th>
-                                                        <th>Status</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php $no = 1; ?>
-                                                    <?php foreach ($siswa as $siswa) : ?>
-                                                        <tr>
-                                                            <td><?= $no ?></td>
-                                                            <td><?= substr($siswa->nama, 0, 30) . (strlen($siswa->nama) > 30 ? '...' : '') ?></td>
-                                                            <td><?= date('d-m-Y', strtotime($siswa->tanggal_formulir)) . '  ' . date('H:i:s', strtotime($siswa->tanggal_formulir))  ?></td>
-                                                            <td>
-                                                                <a href="<?= site_url('Dashboard/detail/' . $siswa->id_formulir) ?>" style="margin-bottom: 1vh;" class="btn icon icon-left btn-primary"><i data-feather="document" style="margin-top: -5px;"></i>📝Validasi Data</a>
+                                                        <td><?= $no ?></td>
+                                                        <td><?= substr($siswa->nama, 0, 30) . (strlen($siswa->nama) > 30 ? '...' : '') ?></td>
+                                                        <td><?= date('d-m-Y', strtotime($siswa->tanggal_formulir)) . '  ' . date('H:i:s', strtotime($siswa->tanggal_formulir))  ?></td>
+                                                        <td>
+                                                            <a href="<?= site_url('Dashboard/detail/' . $siswa->id_formulir) ?>" style="margin-bottom: 1vh;" class="btn icon icon-left btn-primary"><i data-feather="document" style="margin-top: -5px;"></i>📝Validasi Data</a>
 
-                                                            </td>
-                                                            <td>
-                                                                <?php if ($siswa->status == '1') { ?>
-                                                                    <span class="badge bg-secondary">Belum Terkonfirmasi</span>
-                                                                <?php }
-                                                                if ($siswa->status == '2') { ?>
-                                                                    <span class="badge bg-success">Terkonfirmasi</span>
-                                                                <?php }
-                                                                if ($siswa->status == '3') { ?>
-                                                                    <span class="badge bg-danger"> Tidak Terkonfirmasi</span>
-                                                                <?php } ?>
-                                                            </td>
-                                                        </tr>
-                                                        <?php $no++; ?>
-                                                    <?php endforeach; ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                                        </td>
+                                                        <td>
+                                                            <?php if ($siswa->status == '1') { ?>
+                                                                <span class="badge bg-secondary">Belum Terkonfirmasi</span>
+                                                            <?php }
+                                                            if ($siswa->status == '2') { ?>
+                                                                <span class="badge bg-success">Terkonfirmasi</span>
+                                                            <?php }
+                                                            if ($siswa->status == '3') { ?>
+                                                                <span class="badge bg-danger"> Tidak Terkonfirmasi</span>
+                                                            <?php } ?>
+                                                        </td>
+                                                    </tr>
+                                                    <?php $no++; ?>
+                                                <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </div>
+                    </section>
                     </section>
                 </div>
             </div>

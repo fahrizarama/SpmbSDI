@@ -57,12 +57,37 @@ class Siswa_Model extends CI_Model
     }
 
 
-    public function getRequest() //ambil data untuk dashboard
+    public function getSiswaID() //ambil data untuk dashboard Pendaftar
     {
         $id_user = $this->session->userdata('id_user');
         $query = $this->db->query("SELECT * FROM formulir WHERE id_user = ?", [$id_user]);
         return $query->result();
     }
+
+    public function getSiswaAll() //jumlah pendaftar semua untuk home
+    {
+        $query = $this->db->query("SELECT * FROM formulir");
+        return $query->result();
+    }
+
+    public function getSiswaBaru() //jumlah pendaftar baru untuk home
+    {
+        $query = $this->db->query("SELECT * FROM formulir where status = 1");
+        return $query->result();
+    }
+
+    public function getSiswaTerima() //jumlah pendaftar terima untuk home
+    {
+        $query = $this->db->query("SELECT * FROM formulir where status = 2");
+        return $query->result();
+    }
+
+    public function getSiswaTolak() //jumlah Pendaftar Tolak untuk home
+    {
+        $query = $this->db->query("SELECT * FROM formulir where status = 3");
+        return $query->result();;
+    }
+
 
     public function getById($id_formulir) //detail dashboard
     {

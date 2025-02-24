@@ -37,7 +37,7 @@ class Login extends CI_Controller
 				];
 				$this->session->set_userdata($datas);
 				if ($user['role'] == '1') {
-					redirect('Dashboard');
+					redirect('Home');
 				}
 				if ($user['role'] == '2') {
 					redirect('Dashboard');

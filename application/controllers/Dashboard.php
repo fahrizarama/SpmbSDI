@@ -18,10 +18,10 @@ class dashboard extends CI_Controller
 
 	public function index()
 	{
-		$data["siswa"] = $this->Siswa_Model->getRequest();
+		$data["siswa"] = $this->Siswa_Model->getSiswaID();
 		if (!$data["siswa"]) {
 			$this->session->set_flashdata('tanya', 'Anda Belum Mengajukan Pendaftaran');
-			$this->load->view('dashboard');
+			$this->load->view('dashboard', $data);
 		} else {
 			$this->load->view('dashboard', $data);
 		}
