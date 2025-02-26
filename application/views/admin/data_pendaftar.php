@@ -198,9 +198,11 @@
                                             <thead>
                                                 <tr>
                                                     <th>No.</th>
+                                                    <th>No Formulir</th>
                                                     <th>Nama Akun</th>
                                                     <th>Tanggal Upload</th>
                                                     <th>Detail Data</th>
+                                                    <th>Formulir</th>
                                                     <th>Status</th>
                                                 </tr>
                                             </thead>
@@ -209,11 +211,14 @@
                                                 <?php foreach ($dataSiswa as $siswa) : ?>
                                                     <tr>
                                                         <td><?= $no ?></td>
+                                                        <td><?= $siswa->id_formulir ?></td>
                                                         <td><?= substr($siswa->nama, 0, 30) . (strlen($siswa->nama) > 30 ? '...' : '') ?></td>
                                                         <td><?= date('d-m-Y', strtotime($siswa->tanggal_formulir)) . '  ' . date('H:i:s', strtotime($siswa->tanggal_formulir))  ?></td>
                                                         <td>
                                                             <a href="<?= site_url('Dashboard/detail/' . $siswa->id_formulir) ?>" style="margin-bottom: 1vh;" class="btn icon icon-left btn-primary"><i data-feather="document" style="margin-top: -5px;"></i>📝Validasi Data</a>
-
+                                                        </td>
+                                                        <td>
+                                                            <a href="<?= site_url('Dashboard/cetak_pdf/' . $siswa->id_formulir) ?>" style="margin-bottom: 1vh;" class="btn icon icon-left btn-warning"><i data-feather="download" style="margin-top: -5px;"></i>Unduh</a>
                                                         </td>
                                                         <td>
                                                             <?php if ($siswa->status == '1') { ?>

@@ -80,6 +80,7 @@
 
                                                     <div style="margin-bottom: 15px;" class="col-sm-7 col-12">
                                                         <h5 class="card-title">Formulir Calon Siswa</h5>
+                                                        <a href="<?= site_url('Dashboard/cetak_pdf/' . $siswa->id_formulir) ?>" style="margin-bottom: 1vh;" class="btn icon icon-left btn-warning"><i data-feather="download" style="margin-top: -5px;"></i>Unduh Formulir</a><br>
                                                         <a>Tanggal Upload : <?= date('d-m-Y', strtotime($siswa->tanggal_formulir)); ?></a><br>
                                                         <a>Waktu Upload : <?= date('H:i:s', strtotime($siswa->tanggal_formulir)); ?></a><br>
                                                         <a>Status : <?php if ($siswa->status == '1') { ?>

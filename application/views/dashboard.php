@@ -75,6 +75,7 @@
                                                 <th>Nama Siswa</th>
                                                 <th>Tanggal Upload</th>
                                                 <th>Detail</th>
+                                                <th>Unduh</th>
                                                 <th>Status</th>
                                             </tr>
                                         </thead>
@@ -87,7 +88,9 @@
                                                     <td><?= $siswa->tanggal_formulir ?></td>
                                                     <td>
                                                         <a href="<?= site_url('Dashboard/detail/' . $siswa->id_formulir) ?>" style="margin-bottom: 1vh;" class="btn icon icon-left btn-primary"><i data-feather="info" style="margin-top: -5px;"></i>Detail</a>
-                                                        <!-- <a href="<?= site_url('Dashboard/detail/' . $siswa->id_formulir) ?>" class="btn icon icon-left btn-success"><i data-feather="info" style="margin-top: -2px;"></i>Detail</a> -->
+                                                    </td>
+                                                    <td>
+                                                        <a href="<?= site_url('Dashboard/cetak_pdf/' . $siswa->id_formulir) ?>" style="margin-bottom: 1vh;" class="btn icon icon-left btn-warning"><i data-feather="download" style="margin-top: -5px;"></i>Unduh</a>
                                                     </td>
                                                     <td>
                                                         <?php if ($siswa->status == '1') { ?>

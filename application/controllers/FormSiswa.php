@@ -32,6 +32,7 @@ class FormSiswa extends CI_Controller
 
 		// Ambil data teks dari form
 		$data = [
+			'id_formulir' => date('YmdHis') . rand(10, 99),
 			'tanggal_formulir' => date('Y-m-d H:i:s'), // Menggunakan timestamp saat ini
 			'id_user'          => $this->session->userdata('id_user'),
 			'nama'             => $this->input->post('nama'),
