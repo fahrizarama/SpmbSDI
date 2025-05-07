@@ -576,7 +576,7 @@ Silakan hubungi pihak sekolah untuk informasi lebih lanjut.";
 
 		$data["user"] = $user->getById($id_user);
 		if (!$data["user"]) {
-			redirect('404_override'); // Ganti 'kategori' dengan nama controller yang ingin Anda tuju
+			redirect('404_override');
 		}
 	}
 }
