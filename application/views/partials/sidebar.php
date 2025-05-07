@@ -65,7 +65,7 @@
                 <?php }
                 if ($this->session->userdata('role') == '1') { ?>
 
-                    <li class="sidebar-item <?= ($this->uri->segment(1) == 'Home' || $this->uri->segment(1) == 'Dashboard') ? 'active' : '' ?>">
+                    <li class="sidebar-item <?= ($this->uri->segment(1) == 'Home' && $this->uri->segment(2) !== 'user' || $this->uri->segment(1) == 'Dashboard' && $this->uri->segment(2) !== 'user')  ? 'active' : '' ?>">
                         <a href=" <?php echo base_url('Home') ?>" class='sidebar-link'>
                             <i class="bi bi-file-earmark-person-fill"></i>
                             <span>Pendaftar</span>
@@ -83,6 +83,13 @@
 
                 <?php } ?>
                 <li class="sidebar-title">Akun</li>
+                <li
+                    class="sidebar-item <?= $this->uri->segment(2) == 'user' ? 'active' : '' ?>">
+                    <a href=" <?php echo base_url('Home/user') ?>" class='sidebar-link'>
+                        <i class="bi bi-person-fill-gear"></i>
+                        <span>Ubah Password</span>
+                    </a>
+                </li>
                 <li
                     class="sidebar-item">
                     <a href=" <?php echo base_url('Login/logout') ?>" class='sidebar-link'>

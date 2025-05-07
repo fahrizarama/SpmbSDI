@@ -40,12 +40,5 @@ class Api extends CI_Controller
         if (!$data["api"]) {
             redirect('404_override'); // Ganti 'kategori' dengan nama controller yang ingin Anda tuju
         }
-
-        $this->load->view("_partials/header.php", $data);
-        $this->load->view("_partials/sidebar.php", $data); // menu admin
-
-        $this->load->view("api_wa/edit", $data); //main
-
-        $this->load->view("_partials/footer.php", $data);
     }
 }

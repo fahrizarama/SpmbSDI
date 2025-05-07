@@ -23,6 +23,7 @@ class Home extends CI_Controller
 
 		$this->load->model("Siswa_Model");
 		$this->load->model("Api_Model");
+		$this->load->model("Auth_Model");
 		$this->load->library('form_validation');
 		$this->load->helper('url');
 	}
@@ -554,5 +555,28 @@ Silakan hubungi pihak sekolah untuk informasi lebih lanjut.";
 		$writer = new Xlsx($spreadsheet);
 		$writer->save('php://output');
 		exit;
+	}
+	public function user()
+	{
+		$id_user =  $this->session->userdata('id_user');
+		$data["user"] = $this->Auth_Model->getById($id_user);
+		$this->load->view('admin/user', $data);
+	}
+	public function user_edit($id_user = null)
+	{
+		$user = $this->Auth_Model;
+		$validation = $this->form_validation;
+		$validation->set_rules($user->rules());
+
+		if ($validation->run()) {
+			$user->update();
+			$this->session->set_flashdata('success', 'Data Berhasil Diubah!');
+			redirect('Home/user');
+		}
+
+		$data["user"] = $user->getById($id_user);
+		if (!$data["user"]) {
+			redirect('404_override'); // Ganti 'kategori' dengan nama controller yang ingin Anda tuju
+		}
 	}
 }

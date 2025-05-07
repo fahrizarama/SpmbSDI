@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2025 at 07:07 AM
+-- Generation Time: May 07, 2025 at 04:48 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -98,11 +98,11 @@ INSERT INTO `coba` (`id`, `nama`, `dokumen_akta`, `dokumen_kk`, `foto`) VALUES
 --
 
 CREATE TABLE `formulir` (
-  `id_formulir` int(11) NOT NULL,
+  `id_formulir` varchar(30) NOT NULL,
   `tanggal_formulir` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `id_user` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `nik` int(17) NOT NULL,
+  `nik` varchar(17) NOT NULL,
   `alamat` text NOT NULL,
   `agama` varchar(30) NOT NULL,
   `tanggal_lahir` date NOT NULL,
@@ -111,7 +111,7 @@ CREATE TABLE `formulir` (
   `saudara` varchar(100) DEFAULT NULL,
   `jenis_kelamin` varchar(15) NOT NULL,
   `nama_a` varchar(100) NOT NULL,
-  `nik_a` int(17) NOT NULL,
+  `nik_a` varchar(17) NOT NULL,
   `alamat_a` text NOT NULL,
   `agama_a` varchar(30) NOT NULL,
   `tanggal_lahir_a` date NOT NULL,
@@ -120,7 +120,7 @@ CREATE TABLE `formulir` (
   `no_hp_a` varchar(25) NOT NULL,
   `penghasilan_a` varchar(40) NOT NULL,
   `nama_b` varchar(100) NOT NULL,
-  `nik_b` int(17) NOT NULL,
+  `nik_b` varchar(17) NOT NULL,
   `alamat_b` text NOT NULL,
   `agama_b` varchar(30) NOT NULL,
   `tanggal_lahir_b` date NOT NULL,
@@ -143,7 +143,10 @@ CREATE TABLE `formulir` (
 --
 
 INSERT INTO `formulir` (`id_formulir`, `tanggal_formulir`, `id_user`, `nama`, `nik`, `alamat`, `agama`, `tanggal_lahir`, `asal_sekolah`, `anak_ke`, `saudara`, `jenis_kelamin`, `nama_a`, `nik_a`, `alamat_a`, `agama_a`, `tanggal_lahir_a`, `email_a`, `profesi_a`, `no_hp_a`, `penghasilan_a`, `nama_b`, `nik_b`, `alamat_b`, `agama_b`, `tanggal_lahir_b`, `email_b`, `profesi_b`, `no_hp_b`, `penghasilan_b`, `dokumen_kk`, `foto`, `dokumen_akta`, `token1`, `token2`, `token3`, `status`, `alasan`) VALUES
-(2, '2025-02-16 06:18:10', 6, 'Fahriza Ramadhani Putra Al Malik Bin Yahya', 2147483647, 'asd', 'Islam', '2025-02-14', 'asd', 'dua', 'asd', 'Perempuan', 'asd', 123, 'asd', 'Islam', '2025-02-14', 'asd@asd', 'asd', '+6281332490394', 'Tidak Berpenghasilan', 'asd', 123, 'asd', 'Islam', '2025-02-14', 'asd@asd', 'asd', '08990505517', 'Tidak Berpenghasilan', 'kk_coba_20250216_002712.pdf', 'foto_coba_20250216_002712.jpg', 'akta_coba_20250216_002712.pdf', NULL, NULL, NULL, 3, '');
+('2025022512304511', '2025-02-25 08:44:41', 6, 'Fahriza Ramadhani Putra Al Malik Bin Yahya', '3508150501990002', 'asd', 'Islam', '2025-02-14', 'asd', 'dua', 'asd', 'Perempuan', 'asd', '123', 'asd', 'Islam', '2025-02-14', 'asd@asd', 'asd', '081332490394', 'Tidak Berpenghasilan', 'asd', '123', 'asd', 'Islam', '2025-02-14', 'asd@asd', 'asd', '08990505517', 'Tidak Berpenghasilan', 'kk_coba_20250216_002712.pdf', 'foto_coba_20250216_002712.jpg', 'akta_coba_20250216_002712.pdf', NULL, NULL, NULL, 1, ''),
+('2025022512304534', '2025-02-25 07:19:32', 6, 'Fahriza Ramadhani Putra Al Malik Bin Yahya', '2147483647', 'asd', 'Islam', '2025-02-14', 'asd', 'dua', 'asd', 'Perempuan', 'asd', '123', 'asd', 'Islam', '2025-02-14', 'asd@asd', 'asd', '+6281332490394', 'Tidak Berpenghasilan', 'asd', '123', 'asd', 'Islam', '2025-02-14', 'asd@asd', 'asd', '08990505517', 'Tidak Berpenghasilan', 'kk_coba_20250216_002712.pdf', 'foto_coba_20250216_002712.jpg', 'akta_coba_20250216_002712.pdf', NULL, NULL, NULL, 3, ''),
+('2025022512304535', '2025-02-25 07:19:34', 6, 'Fahriza Ramadhani Putra Al Malik Bin Yahya', '2147483647', 'asd', 'Islam', '2025-02-14', 'asd', 'dua', 'asd', 'Perempuan', 'asd', '123', 'asd', 'Islam', '2025-02-14', 'asd@asd', 'asd', '+6281332490394', 'Tidak Berpenghasilan', 'asd', '123', 'asd', 'Islam', '2025-02-14', 'asd@asd', 'asd', '08990505517', 'Tidak Berpenghasilan', 'kk_coba_20250216_002712.pdf', 'foto_coba_20250216_002712.jpg', 'akta_coba_20250216_002712.pdf', NULL, NULL, NULL, 2, ''),
+('2025050709445488', '2025-05-07 02:44:54', 7, 'Budi', '3508150501990002', 'sdasdasdasdas', 'Islam', '2025-04-30', 'asdasdasd', 'asdasda', 'asdasd', 'Laki-Laki', 'dasdasdasd', '123123123123', 'asdasd', 'Islam', '2025-05-21', 'fahrizarp01@gmail.com', 'asdasdas', '123123', 'Rp. 1.000.000 - Rp. 2.000.000', 'asdasdasd', '123123123', 'asdasdasd', 'Lainnya', '2025-05-20', 'fahrizarp01@gmail.com', 'asdasdas', '123123', 'Rp. 500.000 - Rp. 1.000.000', 'kk_Astina_20250507_094454.pdf', 'foto_Astina_20250507_094454.jpg', 'akta_Astina_20250507_094454.pdf', NULL, NULL, NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -167,7 +170,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `nama`, `email`, `username`, `password`, `view_password`, `role`) VALUES
 (1, 'admin', 'admin@gmail.com', 'admin', '$2y$10$V8VXKDXn4B9Lleeya.S.i.EMDMSlQ906fJ1vEI/jkHYYvOHIf6dH.', 'admin123', '1'),
-(6, 'coba', 'coba@gmail.com', '123', '$2y$10$BTzO/TAuzwr6IAyJyB2a0OTOap.C6XjRB11Br/RqPKIFx2.GvlqZy', '123123123', '1');
+(6, 'coba', 'coba@gmail.com', '123', '$2y$10$BTzO/TAuzwr6IAyJyB2a0OTOap.C6XjRB11Br/RqPKIFx2.GvlqZy', '123123123', '2'),
+(7, 'Astina', 'astina@gmail.com', 'rama', '$2y$10$KMryIY2Px33gVC3rz.1wM.Rbc6hgcDbsK46qYWCD/uZLmDPjZHhKa', 'rama123123', '2');
 
 --
 -- Indexes for dumped tables
@@ -226,16 +230,10 @@ ALTER TABLE `coba`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `formulir`
---
-ALTER TABLE `formulir`
-  MODIFY `id_formulir` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
