@@ -41,7 +41,7 @@ class Auth_Model extends CI_Model
         $this->view_password = $post["password"];
         $this->role = 2;
 
-        $this->db->update($this->_table, $this, array('id_anggota' => $post['id_anggota']));
+        $this->db->insert($this->_table, $this);
     }
 
     public function update()
