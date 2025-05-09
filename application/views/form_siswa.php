@@ -324,14 +324,18 @@
                                                     <div class="col-md-6 col-12">
                                                         <div class="form-group mandatory">
                                                             <label for="gaji-column" class="form-label">Penghasilan/Gaji</label>
+                                                            <?php
+                                                            $form_data = $this->session->flashdata('form_data');
+                                                            $penghasilan_a = is_array($form_data) && isset($form_data['penghasilan_a']) ? $form_data['penghasilan_a'] : '';
+                                                            ?>
                                                             <select id="gaji-column" required class="form-control" name="penghasilan_a">
                                                                 <option value="">Pilih Gaji</option>
-                                                                <option value="Tidak Berpenghasilan" <?= ($this->session->flashdata('form_data')['penghasilan_a'] == 'Tidak Berpenghasilan') ? 'selected' : ''; ?>>Tidak Berpenghasilan</option>
-                                                                <option value="Kurang Dari Rp. 500.000" <?= ($this->session->flashdata('form_data')['penghasilan_a'] == 'Kurang Dari Rp. 500.000') ? 'selected' : ''; ?>>Kurang Dari Rp. 500.000</option>
-                                                                <option value="Rp. 500.000 - Rp. 1.000.000" <?= ($this->session->flashdata('form_data')['penghasilan_a'] == 'Rp. 500.000 - Rp. 1.000.000') ? 'selected' : ''; ?>>Rp. 500.000 - Rp. 1.000.000</option>
-                                                                <option value="Rp. 1.000.000 - Rp. 2.000.000" <?= ($this->session->flashdata('form_data')['penghasilan_a'] == 'Rp. 1.000.000 - Rp. 2.000.000') ? 'selected' : ''; ?>>Rp. 1.000.000 - Rp. 2.000.000</option>
-                                                                <option value="Rp. 2.000.000 - Rp. 4.000.000" <?= ($this->session->flashdata('form_data')['penghasilan_a'] == 'Rp. 2.000.000 - Rp. 4.000.000') ? 'selected' : ''; ?>>Rp. 2.000.000 - Rp. 4.000.000</option>
-                                                                <option value="Rp. 4.000.000 - Rp. 20.000.000" <?= ($this->session->flashdata('form_data')['penghasilan_a'] == 'Rp. 4.000.000 - Rp. 20.000.000') ? 'selected' : ''; ?>>Rp. 4.000.000 - Rp. 20.000.000</option>
+                                                                <option value="Tidak Berpenghasilan" <?= ($penghasilan_a == 'Tidak Berpenghasilan') ? 'selected' : ''; ?>>Tidak Berpenghasilan</option>
+                                                                <option value="Kurang Dari Rp. 500.000" <?= ($penghasilan_a == 'Kurang Dari Rp. 500.000') ? 'selected' : ''; ?>>Kurang Dari Rp. 500.000</option>
+                                                                <option value="Rp. 500.000 - Rp. 1.000.000" <?= ($penghasilan_a == 'Rp. 500.000 - Rp. 1.000.000') ? 'selected' : ''; ?>>Rp. 500.000 - Rp. 1.000.000</option>
+                                                                <option value="Rp. 1.000.000 - Rp. 2.000.000" <?= ($penghasilan_a == 'Rp. 1.000.000 - Rp. 2.000.000') ? 'selected' : ''; ?>>Rp. 1.000.000 - Rp. 2.000.000</option>
+                                                                <option value="Rp. 2.000.000 - Rp. 4.000.000" <?= ($penghasilan_a == 'Rp. 2.000.000 - Rp. 4.000.000') ? 'selected' : ''; ?>>Rp. 2.000.000 - Rp. 4.000.000</option>
+                                                                <option value="Rp. 4.000.000 - Rp. 20.000.000" <?= ($penghasilan_a == 'Rp. 4.000.000 - Rp. 20.000.000') ? 'selected' : ''; ?>>Rp. 4.000.000 - Rp. 20.000.000</option>
                                                             </select>
                                                             <small class="form-text text-muted">Pilih rentang gaji yang sesuai.</small>
                                                         </div>
@@ -464,14 +468,18 @@
                                                     <div class="col-md-6 col-12">
                                                         <div class="form-group mandatory">
                                                             <label for="gaji-column" class="form-label">Penghasilan/Gaji</label>
+                                                            <?php
+                                                            $form_data = $this->session->flashdata('form_data');
+                                                            $penghasilan_b = is_array($form_data) && isset($form_data['penghasilan_b']) ? $form_data['penghasilan_b'] : '';
+                                                            ?>
                                                             <select id="gaji-column" required class="form-control" name="penghasilan_b">
                                                                 <option value="">Pilih Gaji</option>
-                                                                <option value="Tidak Berpenghasilan" <?= ($this->session->flashdata('form_data')['penghasilan_b'] == 'Tidak Berpenghasilan') ? 'selected' : ''; ?>>Tidak Berpenghasilan</option>
-                                                                <option value="Kurang Dari Rp. 500.000" <?= ($this->session->flashdata('form_data')['penghasilan_b'] == 'Kurang Dari Rp. 500.000') ? 'selected' : ''; ?>>Kurang Dari Rp. 500.000</option>
-                                                                <option value="Rp. 500.000 - Rp. 1.000.000" <?= ($this->session->flashdata('form_data')['penghasilan_b'] == 'Rp. 500.000 - Rp. 1.000.000') ? 'selected' : ''; ?>>Rp. 500.000 - Rp. 1.000.000</option>
-                                                                <option value="Rp. 1.000.000 - Rp. 2.000.000" <?= ($this->session->flashdata('form_data')['penghasilan_b'] == 'Rp. 1.000.000 - Rp. 2.000.000') ? 'selected' : ''; ?>>Rp. 1.000.000 - Rp. 2.000.000</option>
-                                                                <option value="Rp. 2.000.000 - Rp. 4.000.000" <?= ($this->session->flashdata('form_data')['penghasilan_b'] == 'Rp. 2.000.000 - Rp. 4.000.000') ? 'selected' : ''; ?>>Rp. 2.000.000 - Rp. 4.000.000</option>
-                                                                <option value="Rp. 4.000.000 - Rp. 20.000.000" <?= ($this->session->flashdata('form_data')['penghasilan_b'] == 'Rp. 4.000.000 - Rp. 20.000.000') ? 'selected' : ''; ?>>Rp. 4.000.000 - Rp. 20.000.000</option>
+                                                                <option value="Tidak Berpenghasilan" <?= ($penghasilan_b == 'Tidak Berpenghasilan') ? 'selected' : ''; ?>>Tidak Berpenghasilan</option>
+                                                                <option value="Kurang Dari Rp. 500.000" <?= ($penghasilan_b == 'Kurang Dari Rp. 500.000') ? 'selected' : ''; ?>>Kurang Dari Rp. 500.000</option>
+                                                                <option value="Rp. 500.000 - Rp. 1.000.000" <?= ($penghasilan_b == 'Rp. 500.000 - Rp. 1.000.000') ? 'selected' : ''; ?>>Rp. 500.000 - Rp. 1.000.000</option>
+                                                                <option value="Rp. 1.000.000 - Rp. 2.000.000" <?= ($penghasilan_b == 'Rp. 1.000.000 - Rp. 2.000.000') ? 'selected' : ''; ?>>Rp. 1.000.000 - Rp. 2.000.000</option>
+                                                                <option value="Rp. 2.000.000 - Rp. 4.000.000" <?= ($penghasilan_b == 'Rp. 2.000.000 - Rp. 4.000.000') ? 'selected' : ''; ?>>Rp. 2.000.000 - Rp. 4.000.000</option>
+                                                                <option value="Rp. 4.000.000 - Rp. 20.000.000" <?= ($penghasilan_b == 'Rp. 4.000.000 - Rp. 20.000.000') ? 'selected' : ''; ?>>Rp. 4.000.000 - Rp. 20.000.000</option>
                                                             </select>
                                                             <small class="form-text text-muted">Pilih rentang gaji yang sesuai.</small>
                                                         </div>
