@@ -124,6 +124,7 @@ class Home extends CI_Controller
 		}
 	}
 
+
 	public function tolak($id_formulir)
 	{
 		$this->db->select('api_token');
@@ -132,7 +133,6 @@ class Home extends CI_Controller
 		$this->db->select('*');
 		$this->db->where('id_formulir', $id_formulir);
 		$query = $this->db->get('formulir');
-
 
 		if ($query->num_rows() > 0) {
 			$formulir = $query->row();
@@ -147,21 +147,30 @@ class Home extends CI_Controller
 			$no_hp_b = $formulir->no_hp_b;
 			$api_token = $api->api_token;
 
+			// ambil alasan dari POST
+			$alasan = $this->input->post('alasan');
+
+			// update status dan alasan penolakan
 			$this->db->where('id_formulir', $id_formulir);
-			if ($this->db->update('formulir', array('status' => '3'))) {
-				$this->kirim_pesanTolak($nama, $tanggal_formulir, $nik, $nama_a, $nama_b, $alamat, $no_hp_a, $no_hp_b, $api_token);
+			$update = $this->db->update('formulir', array(
+				'status' => '3',
+				'alasan' => $alasan
+			));
+
+			if ($update) {
+				$this->kirim_pesanTolak($nama, $tanggal_formulir, $nik, $nama_a, $nama_b, $alamat, $no_hp_a, $no_hp_b, $alasan, $api_token);
 				$response = array('success' => true);
 			} else {
-
 				$response = array('success' => false);
 			}
-
-			header('Content-Type: application/json');
-			echo json_encode($response);
 		} else {
 			$response = array('success' => false);
 		}
+
+		header('Content-Type: application/json');
+		echo json_encode($response);
 	}
+
 
 	public function kirim_pesanAcc($nama, $tanggal_formulir, $nik, $nama_a, $nama_b, $alamat, $no_hp_a, $no_hp_b, $api_token)
 	{
@@ -239,7 +248,7 @@ class Home extends CI_Controller
 
 
 
-	public function kirim_pesanTolak($nama, $tanggal_formulir, $nik, $nama_a, $nama_b, $alamat, $no_hp_a, $no_hp_b, $api_token)
+	public function kirim_pesanTolak($nama, $tanggal_formulir, $nik, $nama_a, $nama_b, $alamat, $no_hp_a, $no_hp_b, $alasan, $api_token)
 	{
 		// Simpan API token dari parameter
 		$token = $api_token;
@@ -256,7 +265,10 @@ _Nama Ibu:_ $nama_b
 _Alamat:_ $alamat
 _Tanggal Pendaftaran:_ $tanggal_formulir
 
-_Status Data: *Ditolak*
+_Status Data: *Ditolak*_
+
+_*Alasan :*_
+$alasan
 
 Silakan hubungi pihak sekolah untuk informasi lebih lanjut.";
 

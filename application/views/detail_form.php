@@ -617,31 +617,43 @@
     </script>
 
     <script>
-        //modal confirm tolak
+        // Modal konfirmasi tolak dengan input alasan
         function tolakConfirm(url) {
             Swal.fire({
-                title: 'Apakah kamu yakin ingin tidak mengkonfirmasi data ini?',
-                icon: 'warning',
+                title: 'Alasan Penolakan',
+                input: 'textarea',
+                inputPlaceholder: 'Masukkan alasan penolakan...',
+                inputAttributes: {
+                    'aria-label': 'Masukkan alasan penolakan'
+                },
                 showCancelButton: true,
                 confirmButtonColor: 'blue',
                 cancelButtonColor: 'red',
                 confirmButtonText: 'Ya, Tolak!',
-                cancelButtonText: 'Batal'
+                cancelButtonText: 'Batal',
+                preConfirm: (alasan) => {
+                    if (!alasan) {
+                        Swal.showValidationMessage('Alasan harus diisi!');
+                        return false;
+                    }
+                    return alasan;
+                }
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
                         type: 'POST',
                         url: url,
+                        data: {
+                            alasan: result.value
+                        }, // kirim alasan ke server
                         success: function(response) {
                             if (response.success) {
                                 Swal.fire({
                                     icon: 'success',
                                     title: 'Data Berhasil Ditolak!'
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        // pilih satu di bawah ini
-                                        // location.reload(); // Refresh halaman tetap setelah penghapusan data berhasil
-                                        window.location.href = '<?= site_url('Home') ?>'; // Redirect ke halaman kostum setelah penghapusan data berhasil
+                                }).then((r) => {
+                                    if (r.isConfirmed) {
+                                        window.location.href = '<?= site_url('Home') ?>';
                                     }
                                 });
                             } else {
